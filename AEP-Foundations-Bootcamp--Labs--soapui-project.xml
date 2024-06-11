@@ -1,0 +1,3097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b2875485-360c-40eb-8ef5-8577ab26a6cf" activeEnvironment="Default" name="AEP Foundations Bootcamp (Labs)" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="IMS Authenticate"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="OAuth Access Token"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+    </con:settings>
+    <con:interface xsi:type="con:RestService" id="46410f05-cd24-42df-a5f1-aed2f29a34fd" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://ims-na1.adobelogin.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>https://ims-na1.adobelogin.com</con:endpoint>
+        </con:endpoints>
+        <con:resource name="V2" path="/ims/token/v2" id="921eef59-f191-43ae-99ed-1bae5a0e01d0">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>grant_type</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter required="false">
+                    <con:name>client_id</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>client_secret</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>scope</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="V2" id="25ed362e-6c35-4d75-bfbd-f0d4553c2e3f" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="OAuth Access Token" id="7bd30cd8-339b-4059-b529-ec7f9491c5cf" mediaType="application/x-www-form-urlencoded" postQueryString="false" sslKeystore="" timeout="">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+                    </con:settings>
+                    <con:encoding/>
+                    <con:endpoint>https://ims-na1.adobelogin.com</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="grant_type" value="client_credentials"/>
+                        <con:entry key="scope" value="${#Project#SCOPES}"/>
+                        <con:entry key="client_secret" value="${#Project#CLIENT_SECRET}"/>
+                        <con:entry key="client_id" value="${#Project#CLIENT_ID}"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>grant_type</con:entry>
+                        <con:entry>client_id</con:entry>
+                        <con:entry>client_secret</con:entry>
+                        <con:entry>scope</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:interface xsi:type="con:RestService" id="3cb0aa9b-10bb-4261-8ee3-a598c3cfadc4" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://platform.adobe.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>https://platform.adobe.io</con:endpoint>
+        </con:endpoints>
+        <con:resource name="schemaregistry/global/mixins" path="/data/foundation/schemaregistry/global/mixins" id="2386533c-8653-4ab8-b90a-15e8bc2585b3">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Mixins" id="ab5f2a04-4090-4e0d-91b8-7fedea49b402" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get XDM Standard Field Groups" id="22eec4ed-709c-479f-ab5f-586cacf539c0" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed-id+json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="sandbox-management/sandboxes" path="/data/foundation/sandbox-management/sandboxes/${#Project#SANDBOX_NAME}" id="124e68ef-dce0-42a9-a9cc-619a61e10aef">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Sandboxes" id="76325e85-c3a4-490c-970e-47cf6c8c37fa" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Sandbox Info" id="806f81f9-f1c6-4e61-b06f-b0ded995305b" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Content-type" value="application/json"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/stats" path="/data/foundation/schemaregistry/stats" id="4a69ca8c-6dbd-4629-aece-73bc9a79e86c">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Stats" id="f09e68bd-5277-4112-9cbb-19fff42abe7d" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Stats" id="45468b75-9f60-42c4-8895-e8ae5db2ca74" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Content-type" value="application/json"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/tenant/mixins" path="/data/foundation/schemaregistry/tenant/mixins/" id="fb7922cc-7d06-433d-9695-84405ecdfe89">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Mixins" id="1a589288-46bd-4ca6-88a5-3f077e0d5d88" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Post Mixins" id="731068e1-bcdc-4b71-84d4-08cbf09a2ea1" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "title": "",
+  "description": "",
+  "meta:intendedToExtend": [
+    "https://ns.adobe.com/xdm/context/profile"
+  ],
+  "type": "object",
+  "definitions": {
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "${#Project#TENANT_NAME}": {
+          "type": "object",
+          "properties": {
+            "customerID": {
+              "title": "Customer ID",
+              "description": "Customer ID.",
+              "type": "string"
+            },
+            "account": {
+              "title": "Account Setting Details",
+              "description": "Account Details",
+              "type": "object",
+              "properties": {
+                "createDate": {
+                  "title": "Account Create Date",
+                  "description": "Account create date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "endDate": {
+                  "title": "Account End Date",
+                  "description": "Account end date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "acqSource": {
+                  "title": "Account Acquisition Source",
+                  "description": "Account acquisition source.",
+                  "type": "string",
+                  "enum": [
+                    "web",
+                    "inStore"
+                  ],
+                  "meta:enum": {
+                    "web": "Web",
+                    "inStore": "In Store"
+                  }
+                }
+              }
+            },
+            "plan": {
+              "title": "Plan Details",
+              "description": "Plan Details",
+              "type": "object",
+              "properties": {
+                "planID": {
+                  "title": "Plan ID",
+                  "description": "Plan identifier.",
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Plan Name",
+                  "description": "Plan name.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields"
+    }
+  ]
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+            <con:method name="Mixins" id="53633e3e-a4ac-4d7d-92bd-976d3cefcaea" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Mixins" id="4778c428-7ea3-43a3-9198-62a170ab2b51" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed-id+json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/global/classes" path="/data/foundation/schemaregistry/global/classes" id="fb7922cc-7d06-433d-9695-84405ecdfe89">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Classes" id="1a589288-46bd-4ca6-88a5-3f077e0d5d88" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Classes" id="731068e1-bcdc-4b71-84d4-08cbf09a2ea1" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "title": "Customer Account Details - Sandbox 002",
+  "description": "Customer Account Details - Sandbox 002",
+  "meta:intendedToExtend": [
+    "https://ns.adobe.com/xdm/context/profile"
+  ],
+  "type": "object",
+  "definitions": {
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "${#Project#TENANT_NAME}": {
+          "type": "object",
+          "properties": {
+            "customerID": {
+              "title": "Customer ID",
+              "description": "Customer ID.",
+              "type": "string"
+            },
+            "account": {
+              "title": "Account Setting Details",
+              "description": "Account Details",
+              "type": "object",
+              "properties": {
+                "createDate": {
+                  "title": "Account Create Date",
+                  "description": "Account create date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "endDate": {
+                  "title": "Account End Date",
+                  "description": "Account end date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "acqSource": {
+                  "title": "Account Acquisition Source",
+                  "description": "Account acquisition source.",
+                  "type": "string",
+                  "enum": [
+                    "web",
+                    "inStore"
+                  ],
+                  "meta:enum": {
+                    "web": "Web",
+                    "inStore": "In Store"
+                  }
+                }
+              }
+            },
+            "plan": {
+              "title": "Plan Details",
+              "description": "Plan Details",
+              "type": "object",
+              "properties": {
+                "planID": {
+                  "title": "Plan ID",
+                  "description": "Plan identifier.",
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Plan Name",
+                  "description": "Plan name.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields"
+    }
+  ]
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed-id+json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/tenant/schemas/[item]" path="/data/foundation/schemaregistry/tenant/schemas/&lt;REPLACE ME>" id="2bdf7abf-24bf-4790-b78b-514594eaeca6">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Get Schema" id="afc586f7-e8b7-4c14-93e8-5ed36b389721" method="GET">
+                <con:settings/>
+                <con:parameters>
+                    <con:parameter>
+                        <con:name>Accept</con:name>
+                        <con:value>application/json</con:value>
+                        <con:style>HEADER</con:style>
+                        <con:default>application/json</con:default>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>Content-Type</con:name>
+                        <con:value>application/json</con:value>
+                        <con:style>HEADER</con:style>
+                        <con:default>application/json</con:default>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>Authorization</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-api-key</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-gw-ims-org-id</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-sandbox-name</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                </con:parameters>
+                <con:request name="Get Schema (Specific)" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed-full+json;version=1"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/tenant/descriptors" path="/data/foundation/schemaregistry/tenant/descriptors" id="011257bb-c52d-4346-b30d-31077a310879">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Post Descriptors" id="e212615b-8c61-4f1a-b9b1-f5381d849783" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Post Descriptor Identity (Primary)" id="c6721378-b269-41c6-9301-3bf8ef0e1cd0" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "@type": "xdm:descriptorIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/${#Project#TENANT_NAME}/customerID",
+  "xdm:namespace": "customerID",
+  "xdm:property": "xdm:code",
+  "xdm:isPrimary": true
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Post Descriptor Identity (Secondary)" id="c6721378-b269-41c6-9301-3bf8ef0e1cd0" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "@type": "xdm:descriptorIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/personalEmail/address",
+  "xdm:namespace": "Email",
+  "xdm:property": "xdm:code",
+  "xdm:isPrimary": false
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Post Descriptor One-to-One" id="2c610d3f-5eeb-4fde-a264-9b35b97c51b8" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "@type": "xdm:descriptorOneToOne",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "",
+  "xdm:destinationSchema": "",
+  "xdm:destinationVersion": 1
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                </con:request>
+                <con:request name="Post Descriptor Reference Identity" id="e2cca894-6b62-4ea7-99da-bb742a29408d" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+  "@type": "xdm:descriptorReferenceIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "",
+  "xdm:identityNamespace": "planID"
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/tenant/mixins/[item]" path="/data/foundation/schemaregistry/tenant/mixins/&lt;REPLACE ME>" id="fb7922cc-7d06-433d-9695-84405ecdfe89">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Mixins" id="53633e3e-a4ac-4d7d-92bd-976d3cefcaea" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Mixin (Specific)" id="24e9b618-7c4c-4e94-8cd5-0b585e60df80" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed-id+json;version=1"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+            <con:method name="Patch Mixin" id="9abc60ae-3996-4583-8f14-f2d15b7c8dae" method="PATCH">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Patch Mixin" id="d22666f4-4b70-450b-be71-0b7eeccda1ea" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>[
+    { "op":"",
+      "path":"",
+       "value":{
+            "title": "",
+            "type": "",
+            "description": ""
+          }
+    }
+]</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="schemaregistry/tenant/schemas/" path="/data/foundation/schemaregistry/tenant/schemas/" id="2bdf7abf-24bf-4790-b78b-514594eaeca6">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Schemas" id="d2e6d49d-bca4-4c8b-8a9a-ebccb7478884" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Post Schemas" id="a22893eb-3b3c-4711-bac2-4f8f287f1e13" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+    "title": "",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        }
+    ]
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+            <con:method name="Get Schema" id="afc586f7-e8b7-4c14-93e8-5ed36b389721" method="GET">
+                <con:settings/>
+                <con:parameters>
+                    <con:parameter>
+                        <con:name>Accept</con:name>
+                        <con:value>application/json</con:value>
+                        <con:style>HEADER</con:style>
+                        <con:default>application/json</con:default>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>Content-Type</con:name>
+                        <con:value>application/json</con:value>
+                        <con:style>HEADER</con:style>
+                        <con:default>application/json</con:default>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>Authorization</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-api-key</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-gw-ims-org-id</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                    <con:parameter>
+                        <con:name>x-sandbox-name</con:name>
+                        <con:value/>
+                        <con:style>HEADER</con:style>
+                        <con:default/>
+                        <con:path xsi:nil="true"/>
+                        <con:description xsi:nil="true"/>
+                    </con:parameter>
+                </con:parameters>
+                <con:request name="Get Schema" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/vnd.adobe.xed+json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="ups/access/entities" path="/data/core/ups/access/entities" id="f4e9cfdd-f90e-40da-b6e0-b2617c8fed36">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>schema.name</con:name>
+                    <con:value>_xdm.context.profile</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>_xdm.context.profile</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>entityId</con:name>
+                    <con:value>depeche.mode@dep.com</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>depeche.mode@dep.com</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>entityIdNS</con:name>
+                    <con:value>email</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>email</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>relatedSchema.name</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>orderby</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>limit</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>property</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Entity" id="045587ad-14b8-4a27-a881-ba1ded0e9482" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Entity Profile" id="3682f2ad-16be-410c-ae93-388d65b2b0d8" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="limit" value=""/>
+                        <con:entry key="property" value=""/>
+                        <con:entry key="orderby" value=""/>
+                        <con:entry key="relatedSchema.name" value=""/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>schema.name</con:entry>
+                        <con:entry>entityId</con:entry>
+                        <con:entry>entityIdNS</con:entry>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                        <con:entry>relatedSchema.name</con:entry>
+                        <con:entry>orderby</con:entry>
+                        <con:entry>limit</con:entry>
+                        <con:entry>property</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Get Entity Event" id="3682f2ad-16be-410c-ae93-388d65b2b0d8" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
+                        <con:entry key="limit" value="5"/>
+                        <con:entry key="property" value="eventType=&quot;order.placed&quot;"/>
+                        <con:entry key="orderby" value="+timestamp"/>
+                        <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>schema.name</con:entry>
+                        <con:entry>entityId</con:entry>
+                        <con:entry>entityIdNS</con:entry>
+                        <con:entry>relatedSchema.name</con:entry>
+                        <con:entry>orderby</con:entry>
+                        <con:entry>limit</con:entry>
+                        <con:entry>property</con:entry>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="identity/cluster/members" path="/data/core/identity/cluster/members" id="6dcf05ae-c40e-4a54-83f4-26c0c4b92890">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>namespace</con:name>
+                    <con:value>email</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>email</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>id</con:name>
+                    <con:value>depeche.mode@dep.com</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>depeche.mode@dep.com</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Member" id="6fedfd46-ac2e-4e35-a07f-e6e8a2b4a621" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Get Linked Entities" id="a127c8bd-f77f-4b46-b8ab-fe33639a76b9" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request/>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>namespace</con:entry>
+                        <con:entry>id</con:entry>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="ups/segment/jobs" path="/data/core/ups/segment/jobs" id="dda87082-7fbf-4dcd-86df-42aa1fd3e839">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Authorization</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-api-key</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-gw-ims-org-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Audience Job" id="9bb89afc-5f2b-4b77-af5b-71ec5a0425ef" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Post Audience Job" id="5c99cbfd-66ac-4402-9e26-f9a381ef6958" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://platform.adobe.io</con:endpoint>
+                    <con:request>{
+    "schema": {
+        "name": "_xdm.context.profile"
+    },
+    "segments": [
+        {
+            "segmentId": "*"
+        }
+    ]
+ }</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="Accept" value="application/json"/>
+                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>Authorization</con:entry>
+                        <con:entry>x-api-key</con:entry>
+                        <con:entry>x-gw-ims-org-id</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:interface xsi:type="con:RestService" id="0a4c3e66-093f-494f-8070-51244bfdded8" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://dcs.adobedc.net" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Collection/&lt;REPLACE ME>" path="/collection/${#Project#STREAMING_ENDPOINT_ID}" id="afa46161-b20d-4d7c-8daf-0be3cb43306e">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>x-adobe-flow-id</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter required="true">
+                    <con:name>x-sandbox-name</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Collect" id="0850f661-c60f-46fd-9820-329df3fda265" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:request name="Create Customer Account" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                    <con:request>{
+    "customer_id": "202208240125",
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "createDate": "1660096899",
+    "modifyDate": "2022-08-09T22:01:40Z",
+    "birth_Date": "1991-06-12",
+    "mobile_phone": "888-888-8888",
+    "email_optIn": "y",
+    "sms_optIn": "n",
+    "shipping_street_address": "1901 W Madison St",
+    "shipping_city": "Chicago",
+    "shipping_state": "IL",
+    "shipping_zip_code": "60612",
+    "billing_street_address": "1901 W Madison St",
+    "billing_city": "Chicago",
+    "billing_state": "IL",
+    "billing_zip_code": "60612",
+    "plan_id": "m1",
+    "plan_name": "basic",
+    "account_create_date": "Created on 2022-04-20T22:19:03Z",
+    "account_end_date": "2022-01-20T13:15:32Z",
+    "source": "inStore"
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                        <con:entry>x-adobe-flow-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Create Order Event (DI Lab)" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                    <con:request>{
+    "orderStatus": "placed",
+    "lastOrderStatusUpdate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "customerID": "202208240125",
+    "personalEmail": "",
+    "orderID": "${= java.util.UUID.randomUUID()}",
+    "orderDate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "orderTotal": 291.02,
+    "paymentType": "credit",
+    "paymentAmount": 349.35,
+    "paymentCurrencyCode": "USD",
+    "paymentTransactionID": "24596662-1a9b-4fc1-a98f-b5ca687c523f",
+    "storeID": "STORE-35",
+    "shippingStreetAddress": "30133 Golf Parkway",
+    "shippingCity": "Fullerton",
+    "shippingState": "California",
+    "shippingZip": "92640",
+    "shippingMethod": "Standard",
+    "shippingAmount": 0,
+    "shippingDestination": "store",
+    "billingStreetAddress": "497 Kensington Drive",
+    "billingCity": "Glinojeck",
+    "billingZip": "06-450",
+    "plan": {
+        "ID": "m3"
+    },
+    "Products": [
+        {
+            "productID": "PRODUCT-6",
+            "quantity": 1,
+            "price": 150.23,
+            "currencyCode": "USD",
+            "model": "Apple iPhone 13 Pro",
+            "make": "Apple"
+        },
+        {
+            "productID": "PRODUCT-11",
+            "quantity": 1,
+            "price": 150.23,
+            "currencyCode": "USD",
+            "model": "Google Pixel 6",
+            "make": "Google"
+        }
+    ]
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                        <con:entry>x-adobe-flow-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Create Web Event" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                    <con:request>{
+    "_id": "${= java.util.UUID.randomUUID()}",
+    "timestamp": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "eventType": "web.webpagedetails.pageViews",
+    "web": {
+        "webPageDetails": {
+            "name": "iPhone 14"
+        }
+    },
+    "identityMap": {
+        "email": [
+            {
+                "id": "${#Project#SANDBOX_NAME}@dep.com",
+                "primary": true
+            }
+        ],
+        "ecid": [
+            {
+                "id": "83284624341756587728281096462541849724"
+            }
+        ]
+    }
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                        <con:entry>x-adobe-flow-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+                <con:request name="Create Order Event (Prof. Lab)" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                    <con:request>{
+    "eventType": "orders.placed",
+    "timestamp": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "_id": "${= java.util.UUID.randomUUID()}",
+    "_dxp": {
+        "personalEmail": "${#Project#SANDBOX_NAME}@dep.com"
+    },
+    "order": {
+        "orderID": "${= java.util.UUID.randomUUID()}",
+        "priceTotal": 300.46,
+        "orderDate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}"
+    },
+    "productListItems": [
+        {
+            "SKU": "PRODUCT-6",
+            "quantity": 1,
+            "priceTotal": 150.23,
+            "currencyCode": "USD",
+            "_dxp": {
+                "model": "iPhone 14",
+                "make": "Apple"
+            }
+        },
+        {
+            "SKU": "PRODUCT-11",
+            "quantity": 1,
+            "priceTotal": 150.23,
+            "currencyCode": "USD",
+            "_dxp": {
+                "model": "Google Pixel 6",
+                "make": "Google"
+            }
+        }
+    ]
+}</con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                        <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>Content-Type</con:entry>
+                        <con:entry>x-sandbox-name</con:entry>
+                        <con:entry>x-adobe-flow-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:testSuite id="c3481e22-c3a1-4f51-9626-5af3ef969063" name="IMS Authenticate">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="b527e202-db0a-429b-8aa8-b94710699760" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="OAuth Access Token" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="V2 1 - OAuth Access Token" id="d97518d7-304e-41c5-acf8-6668999d78f5">
+                <con:settings/>
+                <con:config service="https://ims-na1.adobelogin.com" resourcePath="/ims/token/v2" methodName="V2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="V2 1 - OAuth Access Token" id="7bd30cd8-339b-4059-b529-ec7f9491c5cf" mediaType="application/x-www-form-urlencoded" postQueryString="false" sslKeystore="">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
+                        </con:settings>
+                        <con:encoding/>
+                        <con:endpoint>https://ims-na1.adobelogin.com</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="grant_type" value="client_credentials"/>
+                            <con:entry key="scope" value="${#Project#SCOPES}"/>
+                            <con:entry key="client_secret" value="${#Project#CLIENT_SECRET}"/>
+                            <con:entry key="client_id" value="${#Project#CLIENT_ID}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>grant_type</con:entry>
+                            <con:entry>client_id</con:entry>
+                            <con:entry>client_secret</con:entry>
+                            <con:entry>scope</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="transfer" name="Property Transfer" id="3d2f2f3f-adb3-4c17-b21e-ecf85fdc6680">
+                <con:settings/>
+                <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+                        <con:name>Access Token Transfer</con:name>
+                        <con:sourceType>Response</con:sourceType>
+                        <con:sourceStep>V2 1 - OAuth Access Token</con:sourceStep>
+                        <con:sourcePath>$.access_token</con:sourcePath>
+                        <con:targetType>ACCESS_TOKEN</con:targetType>
+                        <con:targetStep>#Project#</con:targetStep>
+                        <con:type>JSONPATH</con:type>
+                        <con:targetTransferType>JSONPATH</con:targetTransferType>
+                        <con:upgraded>true</con:upgraded>
+                    </con:transfers>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="00ba4fd4-7a9a-483b-954a-9f53ee615c4d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Check Sandbox Access" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Retrieve Sandbox" id="30e2c738-3d54-44ff-bb80-28500c781192">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/sandbox-management/sandboxes/${#Project#SANDBOX_NAME}" methodName="Sandboxes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Retrieve Sandbox" id="806f81f9-f1c6-4e61-b06f-b0ded995305b" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Content-type" value=""/>
+                            <con:entry key="Accept" value=""/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-type</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:testSuite id="3a91a8f8-0a51-433c-b37c-810f894ec2d3" name="XDM Lab">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="f01a69f3-9075-4894-bc2a-46f5549a80f8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Schema" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="1 - Get XDM Standard Field Groups" id="b35a36d1-2e4b-43cd-838f-805229355657">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/global/mixins" methodName="Mixins" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="1 - Get XDM Standard Field Groups" id="22eec4ed-709c-479f-ab5f-586cacf539c0" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-id+json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="2 - Create Customer Account Details Field Group" id="3e67ad98-1232-4ca3-b64f-d2b933802118">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/mixins/" methodName="Mixins" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="2 - Create Customer Account Details Field Group" id="731068e1-bcdc-4b71-84d4-08cbf09a2ea1" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+  "title": "",
+  "description": "",
+  "meta:intendedToExtend": [
+    "https://ns.adobe.com/xdm/context/profile"
+  ],
+  "type": "object",
+  "definitions": {
+    "customFields": {
+      "type": "object",
+      "properties": {
+        "${#Project#TENANT_NAME}": {
+          "type": "object",
+          "properties": {
+            "customerID": {
+              "title": "Customer ID",
+              "description": "Customer ID.",
+              "type": "string"
+            },
+            "account": {
+              "title": "Account Setting Details",
+              "description": "Account Details",
+              "type": "object",
+              "properties": {
+                "createDate": {
+                  "title": "Account Create Date",
+                  "description": "Account create date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "endDate": {
+                  "title": "Account End Date",
+                  "description": "Account end date.",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "acqSource": {
+                  "title": "Account Acquisition Source",
+                  "description": "Account acquisition source.",
+                  "type": "string",
+                  "enum": [
+                    "web",
+                    "inStore"
+                  ],
+                  "meta:enum": {
+                    "web": "Web",
+                    "inStore": "In Store"
+                  }
+                }
+              }
+            },
+            "plan": {
+              "title": "Plan Details",
+              "description": "Plan Details",
+              "type": "object",
+              "properties": {
+                "planID": {
+                  "title": "Plan ID",
+                  "description": "Plan identifier.",
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Plan Name",
+                  "description": "Plan name.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/customFields"
+    }
+  ]
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="3 - Get Profile Class" id="9d6e5e65-975e-45c7-bf00-aea6080eec93">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/global/mixins" methodName="Mixins" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="3 - Get Profile Class" id="22eec4ed-709c-479f-ab5f-586cacf539c0" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-id+json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="4 - Create Customer Account Schema" id="a3fcafbf-679a-4e4a-82aa-ed6c117d7e01">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/" methodName="Schemas" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="4 - Create Customer Account Schema" id="a22893eb-3b3c-4711-bac2-4f8f287f1e13" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+    "title": "",
+    "description": "",
+    "allOf": [
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        },
+        {
+            "$ref": ""
+        }
+    ]
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="5 - Get Customer Account Schema" id="a86921aa-863f-4133-9f6c-f547e48458e1">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/&lt;REPLACE ME>" methodName="Get Schema" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="5 - Get Customer Account Schema" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-full+json;version=1"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="0eafe53f-1d60-4f6e-9c42-ded4fa93cb6b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Customize Schema" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="1 - Get Tenant Field Groups" id="e409dbf8-10cc-49ae-a301-1d2a8bdef787">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/" methodName="Get Schema" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="1 - Get Tenant Field Groups" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed+json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="2 - Fetch Path for the Object to be Modified" id="51dda4bb-5051-4126-a897-010283348ca4">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/mixins/&lt;REPLACE ME>" methodName="Mixins" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="2 - Fetch Path for the Object to be Modified" id="24e9b618-7c4c-4e94-8cd5-0b585e60df80" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-id+json;version=1"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="3 - Modify Tenant Field Group" id="3bff9630-519c-43bb-a597-f051b3725461">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/mixins/&lt;REPLACE ME>" methodName="Patch Mixin" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="3 - Modify Tenant Field Group" id="d22666f4-4b70-450b-be71-0b7eeccda1ea" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>[
+    { "op":"",
+      "path":"",
+       "value":{
+            "title": "",
+            "type": "",
+            "description": ""
+          }
+    }
+]</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="932883e3-a91e-484a-9a29-2459812b8699" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Identity Descriptors" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="1 - Create Primary Identity for Customer Account Schema" id="e325b969-5963-4da9-a33a-008367bb4e88">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/descriptors" methodName="Post Descriptors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="1 - Create Primary Identity for Customer Account Schema" id="c6721378-b269-41c6-9301-3bf8ef0e1cd0" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+  "@type": "xdm:descriptorIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/${#Project#TENANT_NAME}/customerID",
+  "xdm:namespace": "customerID",
+  "xdm:property": "xdm:code",
+  "xdm:isPrimary": true
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="2 - Create Email Address Identity for Customer Account Schema" id="10b2edd0-f035-4348-a3f5-bca5e48b9833">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/descriptors" methodName="Post Descriptors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="2 - Create Email Address Identity for Customer Account Schema" id="c6721378-b269-41c6-9301-3bf8ef0e1cd0" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+  "@type": "xdm:descriptorIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/personalEmail/address",
+  "xdm:namespace": "Email",
+  "xdm:property": "xdm:code",
+  "xdm:isPrimary": false
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="3 - Get Customer Account Schema and its descriptors" id="235a13f0-4c0f-46e4-9661-da6d074d116c">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/&lt;REPLACE ME>" methodName="Get Schema" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="3 - Get Customer Account Schema and its descriptors" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-full+json;version=1"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="cec739f1-77a7-4576-9e96-98763a2d8e97" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Relationship Descriptors" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="1 - Get Lookup Schemas" id="7538c902-8aef-43e1-b28a-f8de1fbf7544">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/" methodName="Get Schema" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="1 - Get Lookup Schemas" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed+json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="2 - Relationship Descriptor Customer Account To Plan" id="322296df-4c34-4d7a-8e8f-bee34bfbb643">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/descriptors" methodName="Post Descriptors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="2 - Relationship Descriptor Customer Account To Plan" id="2c610d3f-5eeb-4fde-a264-9b35b97c51b8" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+  "@type": "xdm:descriptorOneToOne",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "",
+  "xdm:destinationSchema": "",
+  "xdm:destinationVersion": 1
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="3 - Reference Descriptor for Plan" id="92f64cb3-a427-471a-b932-56560f6979ae">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/descriptors" methodName="Post Descriptors" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="3 - Reference Descriptor for Plan" id="e2cca894-6b62-4ea7-99da-bb742a29408d" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+  "@type": "xdm:descriptorReferenceIdentity",
+  "xdm:sourceSchema": "",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "",
+  "xdm:identityNamespace": "planID"
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="4 - Get Customer Account Schema and its descriptors" id="7baa0aff-e1eb-4933-84dc-dc57c6690314">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/foundation/schemaregistry/tenant/schemas/&lt;REPLACE ME>" methodName="Get Schema" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="4 - Get Customer Account Schema and its descriptors" id="340b7698-8c41-4432-8cee-2ef1f0a0bb4f" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/vnd.adobe.xed-full+json;version=1"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:testSuite id="9386631c-b2a1-4762-a4f4-df612bde7751" name="Data Ingestion Lab">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="f59568bd-cc49-4a7c-909b-fa062546ce14" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Customer Account" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Create Customer Account" id="d33f97d8-39f4-4e5c-8f3a-368d8b1a872f">
+                <con:settings/>
+                <con:config service="https://dcs.adobedc.net" resourcePath="/collection/${#Project#STREAMING_ENDPOINT_ID}" methodName="Collect" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Create Customer Account" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                        <con:request>{
+    "customer_id": "202208240125",
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "createDate": "1660096899",
+    "modifyDate": "2022-08-09T22:01:40Z",
+    "birth_Date": "1991-06-12",
+    "mobile_phone": "888-888-8888",
+    "email_optIn": "y",
+    "sms_optIn": "n",
+    "shipping_street_address": "1901 W Madison St",
+    "shipping_city": "Chicago",
+    "shipping_state": "IL",
+    "shipping_zip_code": "60612",
+    "billing_street_address": "1901 W Madison St",
+    "billing_city": "Chicago",
+    "billing_state": "IL",
+    "billing_zip_code": "60612",
+    "plan_id": "m1",
+    "plan_name": "basic",
+    "account_create_date": "Created on 2022-04-20T22:19:03Z",
+    "account_end_date": "2022-01-20T13:15:32Z",
+    "source": "inStore"
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>x-adobe-flow-id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="d8f01223-4300-4c10-90e1-158c3efa3106" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Order Event" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Create Order Event" id="c6372cac-f875-49fe-83b8-950ebbd45bf1">
+                <con:settings/>
+                <con:config service="https://dcs.adobedc.net" resourcePath="/collection/${#Project#STREAMING_ENDPOINT_ID}" methodName="Collect" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Create Order Event" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                        <con:request>{
+    "orderStatus": "placed",
+    "lastOrderStatusUpdate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "customerID": "202208240125",
+    "personalEmail": "",
+    "orderID": "${= java.util.UUID.randomUUID()}",
+    "orderDate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "orderTotal": 291.02,
+    "paymentType": "credit",
+    "paymentAmount": 349.35,
+    "paymentCurrencyCode": "USD",
+    "paymentTransactionID": "24596662-1a9b-4fc1-a98f-b5ca687c523f",
+    "storeID": "STORE-35",
+    "shippingStreetAddress": "30133 Golf Parkway",
+    "shippingCity": "Fullerton",
+    "shippingState": "California",
+    "shippingZip": "92640",
+    "shippingMethod": "Standard",
+    "shippingAmount": 0,
+    "shippingDestination": "store",
+    "billingStreetAddress": "497 Kensington Drive",
+    "billingCity": "Glinojeck",
+    "billingZip": "06-450",
+    "plan": {
+        "ID": "m3"
+    },
+    "Products": [
+        {
+            "productID": "PRODUCT-6",
+            "quantity": 1,
+            "price": 150.23,
+            "currencyCode": "USD",
+            "model": "Apple iPhone 13 Pro",
+            "make": "Apple"
+        },
+        {
+            "productID": "PRODUCT-11",
+            "quantity": 1,
+            "price": 150.23,
+            "currencyCode": "USD",
+            "model": "Google Pixel 6",
+            "make": "Google"
+        }
+    ]
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>x-adobe-flow-id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:testSuite id="93d471cd-181e-4078-b29c-15dd7993032a" name="Profile Lab">
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="acdd85a9-0d9e-41d6-a868-eeb9ec86278d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Entity Lookup" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Entity Lookup (Attributes)" id="3c6c460c-012e-47dd-a714-c1cff180e5c5">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/core/ups/access/entities" methodName="Entity" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Entity Lookup (Attributes)" id="3682f2ad-16be-410c-ae93-388d65b2b0d8" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="limit" value=""/>
+                            <con:entry key="property" value=""/>
+                            <con:entry key="orderby" value=""/>
+                            <con:entry key="relatedSchema.name" value=""/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>schema.name</con:entry>
+                            <con:entry>entityId</con:entry>
+                            <con:entry>entityIdNS</con:entry>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>relatedSchema.name</con:entry>
+                            <con:entry>orderby</con:entry>
+                            <con:entry>limit</con:entry>
+                            <con:entry>property</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="Entity Lookup (Events)" id="be64984d-126c-4719-899e-2c4aef3cb5cb">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/core/ups/access/entities" methodName="Entity" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Entity Lookup (Events)" id="3682f2ad-16be-410c-ae93-388d65b2b0d8" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
+                            <con:entry key="limit" value="5"/>
+                            <con:entry key="property" value="eventType=&quot;order.placed&quot;"/>
+                            <con:entry key="orderby" value="+timestamp"/>
+                            <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>schema.name</con:entry>
+                            <con:entry>entityId</con:entry>
+                            <con:entry>entityIdNS</con:entry>
+                            <con:entry>relatedSchema.name</con:entry>
+                            <con:entry>orderby</con:entry>
+                            <con:entry>limit</con:entry>
+                            <con:entry>property</con:entry>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="7681aadc-4c3b-49ea-ba69-65692326b539" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="List Linked Identities" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="List Linked Identities" id="5e34a401-fb04-45dd-9d56-19e74b09c0d5">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/core/identity/cluster/members" methodName="Member" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="List Linked Identities" id="a127c8bd-f77f-4b46-b8ab-fe33639a76b9" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request/>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>namespace</con:entry>
+                            <con:entry>id</con:entry>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="cbe35228-9d3c-407e-bb53-310f310898f3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Audience Job" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Audience Job" id="eb141961-8d68-4672-9c4b-e5ef08c1d3ca">
+                <con:settings/>
+                <con:config service="https://platform.adobe.io" resourcePath="/data/core/ups/segment/jobs" methodName="Audience Job" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Audience Job" id="5c99cbfd-66ac-4402-9e26-f9a381ef6958" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://platform.adobe.io</con:endpoint>
+                        <con:request>{
+    "schema": {
+        "name": "_xdm.context.profile"
+    },
+    "segments": [
+        {
+            "segmentId": "*"
+        }
+    ]
+ }</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="Accept" value="application/json"/>
+                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>Authorization</con:entry>
+                            <con:entry>x-api-key</con:entry>
+                            <con:entry>x-gw-ims-org-id</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="3b43e5e7-01da-4ea5-ab34-dc0a47d5d8ba" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Create Events" searchProperties="true">
+            <con:settings/>
+            <con:testStep type="restrequest" name="Create Web Event" id="4884db26-7ce6-43a0-b015-d18b4b9e809a">
+                <con:settings/>
+                <con:config service="https://dcs.adobedc.net" resourcePath="/collection/${#Project#STREAMING_ENDPOINT_ID}" methodName="Collect" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Create Web Event" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                        <con:request>{
+    "_id": "${= java.util.UUID.randomUUID()}",
+    "timestamp": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "eventType": "web.webpagedetails.pageViews",
+    "web": {
+        "webPageDetails": {
+            "name": "iPhone 14"
+        }
+    },
+    "identityMap": {
+        "email": [
+            {
+                "id": "${#Project#SANDBOX_NAME}@dep.com",
+                "primary": true
+            }
+        ],
+        "ecid": [
+            {
+                "id": "83284624341756587728281096462541849724"
+            }
+        ]
+    }
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>x-adobe-flow-id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="Create Order Event" id="0a17c2e5-8d1d-40fb-bfa8-103cd2179f1d">
+                <con:settings/>
+                <con:config service="https://dcs.adobedc.net" resourcePath="/collection/${#Project#STREAMING_ENDPOINT_ID}" methodName="Collect" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="Create Order Event" id="4ad6a7d3-d30a-4802-89e0-a1bf198a8a5a" mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>https://dcs.adobedc.net</con:endpoint>
+                        <con:request>{
+    "eventType": "orders.placed",
+    "timestamp": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}",
+    "_id": "${= java.util.UUID.randomUUID()}",
+    "_dxp": {
+        "personalEmail": "${#Project#SANDBOX_NAME}@dep.com"
+    },
+    "order": {
+        "orderID": "${= java.util.UUID.randomUUID()}",
+        "priceTotal": 300.46,
+        "orderDate": "${= new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ")}"
+    },
+    "productListItems": [
+        {
+            "SKU": "PRODUCT-6",
+            "quantity": 1,
+            "priceTotal": 150.23,
+            "currencyCode": "USD",
+            "_dxp": {
+                "model": "iPhone 14",
+                "make": "Apple"
+            }
+        },
+        {
+            "SKU": "PRODUCT-11",
+            "quantity": 1,
+            "priceTotal": 150.23,
+            "currencyCode": "USD",
+            "_dxp": {
+                "model": "Google Pixel 6",
+                "make": "Google"
+            }
+        }
+    ]
+}</con:request>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+                            <con:entry key="x-adobe-flow-id" value="${#Project#ADOBE_FLOW_ID}"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>Content-Type</con:entry>
+                            <con:entry>x-sandbox-name</con:entry>
+                            <con:entry>x-adobe-flow-id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:properties>
+        <con:property>
+            <con:name>IMS_ORG</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>SANDBOX_NAME</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>CLIENT_ID</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>CLIENT_SECRET</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>SCOPES</con:name>
+            <con:value>openid,session,AdobeID,read_organizations,additional_info.projectedProductContext</con:value>
+        </con:property>
+        <con:property>
+            <con:name>ACCESS_TOKEN</con:name>
+            <con:value>&lt;AUTOMATICALLY FILLED IN></con:value>
+        </con:property>
+        <con:property>
+            <con:name>API_KEY</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>TENANT_NAME</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>TECHNICAL_ACCOUNT_ID</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>STREAMING_ENDPOINT_ID</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+        <con:property>
+            <con:name>ADOBE_FLOW_ID</con:name>
+            <con:value>&lt;REPLACE ME></con:value>
+        </con:property>
+    </con:properties>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>
