@@ -1434,18 +1434,18 @@
                     <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
                     <con:jmsPropertyConfig/>
                     <con:parameters>
-                        <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
-                        <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
-                        <con:entry key="Accept" value="application/json"/>
-                        <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
-                        <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
-                        <con:entry key="limit" value="5"/>
-                        <con:entry key="property" value="eventType=&quot;order.placed&quot;"/>
-                        <con:entry key="orderby" value="+timestamp"/>
-                        <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
-                        <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
-                        <con:entry key="Content-Type" value="application/json"/>
-                    </con:parameters>
+  <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+  <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+  <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
+  <con:entry key="limit" value="5"/>
+  <con:entry key="property" value="eventType=&quot;orders.placed&quot;"/>
+  <con:entry key="orderby" value="+timestamp"/>
+  <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
+  <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters>
                     <con:parameterOrder>
                         <con:entry>schema.name</con:entry>
                         <con:entry>entityId</con:entry>
@@ -2811,18 +2811,18 @@
                         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
                         <con:jmsPropertyConfig/>
                         <con:parameters>
-                            <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
-                            <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
-                            <con:entry key="Accept" value="application/json"/>
-                            <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
-                            <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
-                            <con:entry key="limit" value="5"/>
-                            <con:entry key="property" value="eventType=&quot;order.placed&quot;"/>
-                            <con:entry key="orderby" value="+timestamp"/>
-                            <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
-                            <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
-                            <con:entry key="Content-Type" value="application/json"/>
-                        </con:parameters>
+  <con:entry key="Authorization" value="Bearer ${#Project#ACCESS_TOKEN}"/>
+  <con:entry key="x-sandbox-name" value="${#Project#SANDBOX_NAME}"/>
+  <con:entry key="Accept" value="application/json"/>
+  <con:entry key="x-api-key" value="${#Project#API_KEY}"/>
+  <con:entry key="schema.name" value="_xdm.context.experienceevent"/>
+  <con:entry key="limit" value="5"/>
+  <con:entry key="property" value="eventType=&quot;orders.placed&quot;"/>
+  <con:entry key="orderby" value="+timestamp"/>
+  <con:entry key="relatedSchema.name" value="_xdm.context.profile"/>
+  <con:entry key="x-gw-ims-org-id" value="${#Project#IMS_ORG}"/>
+  <con:entry key="Content-Type" value="application/json"/>
+</con:parameters>
                         <con:parameterOrder>
                             <con:entry>schema.name</con:entry>
                             <con:entry>entityId</con:entry>
